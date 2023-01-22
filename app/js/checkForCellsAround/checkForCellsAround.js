@@ -1,28 +1,24 @@
-const checkForCellsAround = (cellBoard, coordinateX, coordinateY) => {
-  const cellUpLeft = cellBoard[coordinateX - 1]
-    ? cellBoard[coordinateX - 1][coordinateY - 1]
-    : undefined;
-  const cellUp = cellBoard[coordinateX]
-    ? cellBoard[coordinateX][coordinateY - 1]
-    : undefined;
-  const cellUpRight = cellBoard[coordinateX + 1]
-    ? cellBoard[coordinateX + 1][coordinateY - 1]
-    : undefined;
-  const cellLeft = cellBoard[coordinateX - 1]
-    ? cellBoard[coordinateX - 1][coordinateY]
-    : undefined;
-  const cellRight = cellBoard[coordinateX + 1]
-    ? cellBoard[coordinateX + 1][coordinateY]
-    : undefined;
-  const cellDownLeft = cellBoard[coordinateX - 1]
-    ? cellBoard[coordinateX - 1][coordinateY + 1]
-    : undefined;
-  const cellDown = cellBoard[coordinateX]
-    ? cellBoard[coordinateX][coordinateY + 1]
-    : undefined;
-  const cellDownRight = cellBoard[coordinateX + 1]
-    ? cellBoard[coordinateX + 1][coordinateY + 1]
-    : undefined;
+const checkForCellsAround = (cellBoard, i, j) => {
+  const cellUpLeft =
+    cellBoard[i - 1] && cellBoard[i - 1][j - 1]
+      ? cellBoard[i - 1][j - 1]
+      : undefined;
+  const cellUp = cellBoard[i - 1] ? cellBoard[i - 1][j] : undefined;
+  const cellUpRight =
+    cellBoard[i - 1] && cellBoard[i - 1][j + 1]
+      ? cellBoard[i - 1][j + 1]
+      : undefined;
+  const cellLeft = cellBoard[i][j - 1] ? cellBoard[i][j - 1] : undefined;
+  const cellRight = cellBoard[i][j + 1] ? cellBoard[i][j + 1] : undefined;
+  const cellDownLeft =
+    cellBoard[i + 1] && cellBoard[i + 1][j - 1]
+      ? cellBoard[i + 1][j - 1]
+      : undefined;
+  const cellDown = cellBoard[i + 1] ? cellBoard[i + 1][j] : undefined;
+  const cellDownRight =
+    cellBoard[i + 1] && cellBoard[i + 1][j + 1]
+      ? cellBoard[i + 1][j + 1]
+      : undefined;
 
   let count = 0;
 
